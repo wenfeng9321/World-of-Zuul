@@ -11,8 +11,8 @@
  * @author  Michael Kölling and David J. Barnes
  * @version 1.0
  */
-package cn.edu.whut.sept.zuul;
 
+package cn.edu.whut.sept.zuul;
 public class Game
 {
     private Parser parser;
@@ -146,7 +146,7 @@ public class Game
 
         String direction = command.getSecondWord();
 
-        // Try to leave current room.
+        // 试着离开现在的房间。
         Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
