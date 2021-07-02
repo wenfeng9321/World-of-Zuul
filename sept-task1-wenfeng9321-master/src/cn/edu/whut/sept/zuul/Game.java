@@ -13,6 +13,7 @@
  */
 
 package cn.edu.whut.sept.zuul;
+
 public class Game
 {
     private Parser parser;
@@ -110,6 +111,12 @@ public class Game
         else if (commandWord.equals("go")) {
             goRoom(command);
         }
+        else if (commandWord.equals("look")) {
+            look();
+        }
+        else if (commandWord.equals("back")) {
+            back();
+        }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
         }
@@ -171,5 +178,26 @@ public class Game
         else {
             return true;  // signal that we want to quit
         }
+    }
+    
+    
+    private  boolean back()
+    {
+    	if(Command.hasSecondWord()) {
+            System.out.println("Back what?");
+            return false;
+        }
+    	else{
+    	 Room nextRoom = currentRoom.backExit();
+    	 currentRoom = nextRoom;
+         System.out.println(currentRoom.getLongDescription());
+         return true;
+    	}
+    }
+    
+    
+    private void look()
+    {
+    	System.out.println(currentRoom.getLongDescription());
     }
 }

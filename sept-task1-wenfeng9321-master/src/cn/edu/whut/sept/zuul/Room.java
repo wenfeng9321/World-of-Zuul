@@ -8,9 +8,12 @@ public class Room
     private String description;
     private HashMap<String, Room> exits;
 
+
     /**
-    *定义房间和房间的出口
-    */
+     * @param description 创建一个描述为“description”的房间。
+     * 最初，它没有出口。
+     * “description”有点像一个“厨房”或“露天庭院”
+     */
     public Room(String description)
     {
         this.description = description;
@@ -18,7 +21,9 @@ public class Room
     }
     
     /**
-    *输出每个房间的相邻房间信息
+    *定义此房间的出口。
+    *@param direction 出口的方向。
+    *@param neighor 沿着给定的方向靠近房间
     */
     public void setExit(String direction, Room neighbor)
     {
@@ -26,7 +31,7 @@ public class Room
     }
     
     /**
-     * @return
+     * @return 房间名称 房间的描述
      */
     public String getShortDescription()
     {
@@ -34,7 +39,9 @@ public class Room
     }
     
     /**
-    *@return 输出所在位置
+    *返回此房间的详细描述，格式为：
+    *你在__里。出口：__
+    *@return 房间的描述，包括出口
     */
     public String getLongDescription()
     {
@@ -63,6 +70,11 @@ public class Room
     public Room getExit(String direction)
     {
         return exits.get(direction);
+    }
+    
+    public Room backExit()
+    {
+        return exits.get(Command.k);
     }
 }
 

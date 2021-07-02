@@ -3,7 +3,7 @@ package cn.edu.whut.sept.zuul;
 public class CommandWords
 {
     private static final String[] validCommands = {
-            "go", "quit", "help"
+            "go", "quit", "help","look","back"
     };
 
     /**
@@ -28,7 +28,7 @@ public class CommandWords
     }
 
     /**
-     * 向用户输出进行操作之后得到的信息
+     * 向用户输出所有有效的命令
      */
     public void showAll()
     {

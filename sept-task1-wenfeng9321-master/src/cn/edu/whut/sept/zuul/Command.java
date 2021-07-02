@@ -8,8 +8,9 @@ package cn.edu.whut.sept.zuul;
 public class Command
 {
     private String commandWord;
-    private String secondWord;
-
+    private static String secondWord;
+    public static String k;
+    
     /**
      * @param firstWord 得到用户输入命令的第一个单词
      * @param secondWord 得到用户输入命令的第二个单词
@@ -29,10 +30,11 @@ public class Command
     }
 
     /**
-     * @return
+     * @return 第二个单词
      */
-    public String getSecondWord()
+    public static String getSecondWord()
     {
+    	k = secondWord;
         return secondWord;
     }
 
@@ -47,7 +49,7 @@ public class Command
     /**
      * @return 判断用户输入的命令有没有第二个单词，有就返回1，反正返回0
      */
-    public boolean hasSecondWord()
+    public static boolean hasSecondWord()
     {
         return (secondWord != null);
     }
